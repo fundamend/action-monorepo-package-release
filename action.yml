@@ -25,6 +25,7 @@ runs:
 
     - name: Version Update Detected
       if: steps.version.outputs.changed == 'true'
+      shell: bash
       run: 'echo "Version change found! New version: ${{ steps.version.outputs.version }} (${{ steps.version.outputs.type }})"'
 
     - name: Install Dependencies
