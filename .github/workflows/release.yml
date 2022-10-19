@@ -1,0 +1,12 @@
+name: Release
+
+on: [push]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
+        uses: fundamend/action-monorepo-package-release@main
+        with:
+          publish-npm-package: true
