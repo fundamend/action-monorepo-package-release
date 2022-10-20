@@ -1,6 +1,6 @@
 {
 	"name": "@fundamend/action-monorepo-package-release",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"devDependencies": {
 		"@fundamend/config-lint-staged": "*",
 		"@fundamend/config-prettier": "*",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/fundamend/fundamend/compare/@fundamend/action-monorepo-package-release@0.0.3...@fundamend/action-monorepo-package-release@0.0.4) (2022-10-20)
+
+
+### Bug Fixes
+
+* remove unused npm-token input ([429480f](https://github.com/fundamend/fundamend/commit/429480fb4e0cfeecc986f42e332deb29a2ade421))
+
 ### [0.0.3](https://github.com/fundamend/fundamend/compare/@fundamend/action-monorepo-package-release@0.0.2...@fundamend/action-monorepo-package-release@0.0.3) (2022-10-20)
 
 
