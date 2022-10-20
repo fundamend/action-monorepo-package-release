@@ -3,7 +3,7 @@ name: 'Monorepo Release'
 description: 'Releases individual packages of a monorepo once they are pushed to their split repositories'
 
 inputs:
-  publish_npm_package:
+  publish-npm-package:
     description: 'Wether or not a NPM package should be published'
     type: boolean
     required: false
@@ -58,12 +58,12 @@ runs:
       run: 'npx conventional-github-releaser --preset conventionalcommits'
 
     - name: 'Configure NPM'
-      if: ${{ steps.version.outputs.changed == 'true' && inputs.publish_npm_package == 'true' }}
+      if: ${{ steps.version.outputs.changed == 'true' && inputs.publish-npm-package == 'true' }}
       shell: bash
       run: echo "//registry.npmjs.org/:_authToken="${{ inputs.npm-token }}"" > .npmrc
 
     - name: Publish to NPM
-      if: ${{ steps.version.outputs.changed == 'true' && inputs.publish_npm_package == 'true' }}
+      if: ${{ steps.version.outputs.changed == 'true' && inputs.publish-npm-package == 'true' }}
       shell: bash
       run: npm publish
 
