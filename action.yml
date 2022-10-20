@@ -42,7 +42,7 @@ runs:
       uses: fundamend/action-github-tag@main
       with:
         tag: ${{ steps.version.outputs.version }}
-        github-token: ${{ secrets.bithub-token }}
+        github-token: ${{ inputs.bithub-token }}
 
     - name: Checkout
       if: ${{ steps.version.outputs.changed == 'true' }}
@@ -54,13 +54,13 @@ runs:
       if: ${{ steps.version.outputs.changed == 'true' }}
       shell: bash
       env:
-        CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{ secrets.github-token }}
+        CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{ inputs.github-token }}
       run: 'npx conventional-github-releaser --preset conventionalcommits'
 
     - name: 'Configure NPM'
       if: ${{ steps.version.outputs.changed == 'true' && inputs.publish_npm_package == 'true' }}
       shell: bash
-      run: echo "//registry.npmjs.org/:_authToken="${{ secrets.npm-token }}"" > .npmrc
+      run: echo "//registry.npmjs.org/:_authToken="${{ inputs.npm-token }}"" > .npmrc
 
     - name: Publish to NPM
       if: ${{ steps.version.outputs.changed == 'true' && inputs.publish_npm_package == 'true' }}
