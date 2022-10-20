@@ -27,6 +27,9 @@ jobs:
         uses: fundamend/action-monorepo-package-release@main
         with:
           publish-npm-package: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          npm-token: ${{ secrets.NPM_TOKEN }}
+
 ```
 
 The action takes the following inputs:
@@ -34,8 +37,12 @@ The action takes the following inputs:
 | Key                   | Description                                                        |
 | --------------------- | ------------------------------------------------------------------ |
 | `publish-npm-package` | Wether or not an NPM package should be published (default `false`) |
+| `github-token` \*     | Automatically filled by Github                                     |
+| `npm-token`           | required if `publish-npm-package` is set to `true`                 |
 
-`publish-npm-package` requires a valid `NPM_TOKEN` secret to be set in your actions secrets.
+The \* indicates mandatory input.
+
+The `npm-token` secret is filled if an `NPM_TOKEN` secret is set in your actions secrets.
 
 ## License
 
