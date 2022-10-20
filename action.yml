@@ -42,7 +42,7 @@ runs:
       uses: fundamend/action-github-tag@main
       with:
         tag: ${{ steps.version.outputs.version }}
-        github-token: ${{ inputs.bithub-token }}
+        github-token: ${{ inputs.github-token }}
 
     - name: Checkout
       if: ${{ steps.version.outputs.changed == 'true' }}

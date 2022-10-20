@@ -29,7 +29,6 @@ jobs:
           publish-npm-package: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           npm-token: ${{ secrets.NPM_TOKEN }}
-
 ```
 
 The action takes the following inputs:
