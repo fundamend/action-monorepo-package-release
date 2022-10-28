@@ -62,6 +62,11 @@ runs:
       shell: bash
       run: echo "//registry.npmjs.org/:_authToken="${{ inputs.npm-token }}"" > .npmrc
 
+    - name: Install Dependencies
+      if: ${{ steps.version.outputs.changed == 'true' && inputs.publish-npm-package == 'true' }}
+      shell: bash
+      run: npm install
+
     - name: Publish to NPM
       if: ${{ steps.version.outputs.changed == 'true' && inputs.publish-npm-package == 'true' }}
       shell: bash
