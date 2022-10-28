@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/fundamend/fundamend/compare/@fundamend/action-monorepo-package-release@0.0.4...@fundamend/action-monorepo-package-release@0.0.5) (2022-10-28)
+
+
+### Bug Fixes
+
+* add npm install to get missing dependencies before publishing to npm ([2b44452](https://github.com/fundamend/fundamend/commit/2b44452f66c047acff86134e0c9344ccbbae3241))
+
 ### [0.0.4](https://github.com/fundamend/fundamend/compare/@fundamend/action-monorepo-package-release@0.0.3...@fundamend/action-monorepo-package-release@0.0.4) (2022-10-20)
 
 
